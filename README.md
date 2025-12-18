@@ -1,4 +1,4 @@
-# 🚀 SmartTask
+#  SmartTask
 
 **SmartTask** is a highly secure, scalable **RESTful API** built with **Spring Boot** and **PostgreSQL**, designed for modern team collaboration. It provides fine‑grained control over **projects**, **tasks**, and **members**, while ensuring **data integrity**, **security**, and **authorization** at every level.
 
@@ -20,7 +20,7 @@ Key Features
   * Only **Project Owners** can add or remove members
   * Only **Owners or Assignees** can modify tasks
 
-### ⚠️ Advanced Error Handling
+###  Advanced Error Handling
 
 * Global exception handling using `@ControllerAdvice`
 * Clean, professional HTTP responses:
@@ -29,7 +29,7 @@ Key Features
   * `403 Forbidden`
   * `404 Not Found`
 
-### 🗄️ Database Management
+###  Database Management
 
 * **PostgreSQL** for reliable relational data storage
 * **Spring Data JPA** & **Hibernate** for ORM and persistence
@@ -46,11 +46,11 @@ Key Features
 
 ---
 
-## ⚙️ Setup & Installation
+##  Setup & Installation
 
 Follow the steps below to run **SmartTask** locally.
 
-### ✅ Prerequisites
+###  Prerequisites
 
 * Java **17+**
 * Maven **3.8+**
@@ -58,7 +58,7 @@ Follow the steps below to run **SmartTask** locally.
 
 ---
 
-### 📥 1. Clone the Repository
+###  1. Clone the Repository
 
 ```bash
 git clone https://github.com/olexpopov/SmartTask.git
@@ -67,7 +67,7 @@ cd SmartTask
 
 ---
 
-### 🗄️ 2. Configure PostgreSQL
+###  2. Configure PostgreSQL
 
 Update `src/main/resources/application.properties` with your database credentials:
 
