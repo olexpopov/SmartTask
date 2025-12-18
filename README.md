@@ -1,94 +1,101 @@
-SmartTask
+# 🚀 SmartTask
 
-A highly secure, scalable RESTful API built with Spring Boot and PostgreSQL for modern team collaboration. SmartTask provides granular control over projects, tasks, and members, ensuring data integrity and authorization at every level.
+**SmartTask** is a highly secure, scalable **RESTful API** built with **Spring Boot** and **PostgreSQL**, designed for modern team collaboration. It provides fine‑grained control over **projects**, **tasks**, and **members**, while ensuring **data integrity**, **security**, and **authorization** at every level.
 
-Features
+---
 
-Robust Security
+Key Features
 
-Implemented custom JWT (JSON Web Token) authentication and authorization checks.
+ Robust Security
 
-Granular Access Control
+* Custom **JWT (JSON Web Token)** authentication
+* Secure request filtering with Spring Security
+* Stateless, token‑based authorization
 
-Authorization is enforced at the service layer for all critical operations (e.g., only Project Owners can add members; only Owners/Assignees can modify tasks).
+ Granular Access Control
 
-Advanced Error Handling
+ Authorization enforced at the **service layer**
+ Examples:
 
-Implements a @ControllerAdvice global exception handler to map service-layer exceptions to professional HTTP status codes (401, 403, 404).
+  * Only **Project Owners** can add or remove members
+  * Only **Owners or Assignees** can modify tasks
 
-Unit Testing Focus
+### ⚠️ Advanced Error Handling
 
-Core business logic is validated using JUnit 5 and Mockito to ensure stability without relying on a live database.
+* Global exception handling using `@ControllerAdvice`
+* Clean, professional HTTP responses:
 
-Database Management
+  * `401 Unauthorized`
+  * `403 Forbidden`
+  * `404 Not Found`
 
-Uses PostgreSQL via Spring Data JPA and Hibernate for persistent, relational data management.
+### 🗄️ Database Management
 
-Built With
+* **PostgreSQL** for reliable relational data storage
+* **Spring Data JPA** & **Hibernate** for ORM and persistence
 
-Java 17
+---
 
-Spring Boot 3
+## 🛠️ Tech Stack
 
-Spring Security (JWT)
+* **Java 17**
+* **Spring Boot 3.3.4**
+* **Spring Security (JWT)**
+* **PostgreSQL**
+* **Spring Data JPA / Hibernate**
 
-PostgreSQL
+---
 
-Spring Data JPA / Hibernate
+## ⚙️ Setup & Installation
 
-JUnit 5 & Mockito
+Follow the steps below to run **SmartTask** locally.
 
-Setup and Installation
+### ✅ Prerequisites
 
-Follow the steps below to set up and run SmartTask on your local machine.
+* Java **17+**
+* Maven **3.8+**
+* PostgreSQL (running instance)
 
-Prerequisites
+---
 
-Java 17 or higher
+### 📥 1. Clone the Repository
 
-Maven 3.8 or higher
-
-PostgreSQL (A running instance for the database)
-
-1. Clone the Repository
-
-git clone [https://github.com/olexpopov/SmartTask.git](https://github.com/olexpopov/SmartTask.git)
+```bash
+git clone https://github.com/olexpopov/SmartTask.git
 cd SmartTask
+```
 
+---
 
-2. Configure PostgreSQL
+### 🗄️ 2. Configure PostgreSQL
 
-Update src/main/resources/application.properties with your PostgreSQL credentials:
+Update `src/main/resources/application.properties` with your database credentials:
 
+```properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/smarttaskdb
 spring.datasource.username=postgres
 spring.datasource.password=your_password
 spring.jpa.hibernate.ddl-auto=update
+```
 
+---
 
 3. Build and Run
 
-To compile the project and run it:
+Compile and start the application using Maven:
 
+```bash
 ./mvnw clean install
 ./mvnw spring-boot:run
+```
+
+The API will start on the default port: **[http://localhost:8080](http://localhost:8080)**
 
 
-Authentication Flow
+---
 
-Register
+Maintainer
 
-Use POST /api/auth/register to create a new account.
+Maintained by Olex Popov.
 
-Login
 
-Use POST /api/auth/login to receive a JWT token.
-
-API Access
-
-Include the token in the Authorization header for all protected requests:
-Authorization: Bearer <YOUR_JWT_TOKEN>
-
-👨‍💻 Contributing
-
-This project is maintained by [Your Name/Team]. Feedback and suggestions are welcome!
